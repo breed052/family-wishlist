@@ -1,0 +1,29 @@
+{
+  "name": "family-wishlist",
+  "version": "0.0.1",
+  "description": "A simple web server that tracks items others are wishing facks who has purchased them without letting the wisher see.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breed052/family-wishlist.git"
+  },
+  "author": "Brian Reed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/breed052/family-wishlist/issues"
+  },
+  "homepage": "https://github.com/breed052/family-wishlist#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.5",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0"
+  }
+}
