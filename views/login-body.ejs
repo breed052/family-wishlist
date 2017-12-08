@@ -1,4 +1,7 @@
-<form action="/login">
+<form action="/login" method="post">
+  <%  if(userId && userId == 'Fail'){ %>
+    <div >Invalid Username or password</div>
+    <% } %>
 <div>Username: </div><input type="text" placeholder="Enter Username" required id=username />
 <div>Password: </div><input type="password" placeholder="Enter Password" required id=password />
 <button type="submit">Login</button>

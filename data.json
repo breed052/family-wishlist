@@ -1,0 +1,21 @@
+{
+  "brian": {
+    "friendlyName":"Brian",
+    "password":"Password1",
+    "wishes": [
+      {"value":"fishes"},
+      {"value":"cookies","bought":"Erin"},
+      {"value":"Disneyland"}
+    ]
+  },
+  "erin": {
+    "friendlyName":"Erin",
+    "password":"Password2",
+    "wishes": [
+      {"value":"book A","bought":"Brian"},
+      {"value":"Book B"},
+      {"value":"Disneyland"}
+    ]
+  }
+
+}

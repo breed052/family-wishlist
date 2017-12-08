@@ -1,0 +1,52 @@
+<h3>Wishlists</h3>
+<script>
+console.log(userId);
+console.log(users.length);
+function buy(user, wish){
+  var xhr = new XMLHttpRequest()
+  var fd = new FormData()
+  var sender = document.getElementById("button_"+user+"_"+wish)
+  var buy = sender.innerHTML == "Buy"
+  fd.append('buy', buy)
+  fd.append('item', item)
+  fd.append('user', userId)
+
+
+  xhr.addEventListener('load', function(event){
+    if(buy)
+      document.getElementById("button_"+user+"_"+wish).innerHTML = "UnBuy";
+    else {
+      document.getElementById("button_"+user+"_"+wish).innerHTML = "Buy";
+    }
+  })
+
+  xhr.addEventListener('error', function(event){
+    alert("Some error when updating the file.")
+  })
+}
+</script>
+<ul>
+  <%
+  for(var i=0;i<users.length;i++){%>
+    <li>
+      <table>
+        <tr>
+          <th><%= users[i] %></th>
+        </tr>
+        <% for(var j=0;j<users[i].wishes.length;j++){%>
+          <tr>
+            <td><%= users[i].wishes[j].value %></td>
+            <td>
+              <%  if(!users[i].wishes[j].bought){ %>
+                <button id="<%= button_i_j %>" onclick="buy(<%=i %>,<%= j %>)">Buy</button>
+              <%} else if(users[i].wishes[j].bought != userId){%>
+                <div >Already Bought</div>
+              <% } else {%>
+                <button id="<%= button_i_j %>" onclick="buy(<%=i %>,<%= j %>)" >UnBuy</button>
+              <% } %>
+          </tr>
+        <% }%>
+      </table>
+    </li>
+  <% }%>
+</ul>
